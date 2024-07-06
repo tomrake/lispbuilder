@@ -1,0 +1,6 @@
+#+TITLE: SDL Compiled Libraries
+#+DATE: 2024-07-05T22:24:18-04:00
+
+[[https://www.libsdl.org/release/]]
+
+The last release was [[https://www.libsdl.org/release/SDL-1.2.15-win32-x64.zip][SDL-1.2.15-win32-x64.zip]] on 2013-08-17 03:59	
