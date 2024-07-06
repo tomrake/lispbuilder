@@ -1,11 +1,11 @@
 baseURL = 'https://tomrake.github.io/my-project-skel/'
 languageCode = 'en-us'
-title = 'An Empty project with Hugo documentation.'
+title = 'SDL 1.2 on Windows in LISP.'
 theme = "m10c"
 
 author = "Tom Rake"
 [params]
-  description = "A empty project with a skeleton documenation system done in Hugo."
+  description = "Follow my journey of getting Lisp code running on Windows."
   avatar = "2665605.jfif"
 
 [[params.social]]
