@@ -1,0 +1,54 @@
+From 5dcb889d6ce7676b6213ae146e731b6bfafd22ff Mon Sep 17 00:00:00 2001
+From: Tom Rake <zzzap1957@gmail.com>
+Date: Sat, 6 Jul 2024 16:53:26 -0400
+Subject: [PATCH] Changes to use current msys2 released files.
+
+---
+ lispbuilder-sdl-image/cffi/library.lisp | 6 +++---
+ lispbuilder-sdl-mixer/cffi/library.lisp | 3 ++-
+ 2 files changed, 5 insertions(+), 4 deletions(-)
+
+diff --git a/lispbuilder-sdl-image/cffi/library.lisp b/lispbuilder-sdl-image/cffi/library.lisp
+index a44aef3..fd34059 100644
+--- a/lispbuilder-sdl-image/cffi/library.lisp
++++ b/lispbuilder-sdl-image/cffi/library.lisp
+@@ -15,7 +15,7 @@
+ (cffi:define-foreign-library sdl-image
+     (:darwin (:or (:framework "SDL_image")
+                   (:default "libSDL_image")))
+-    (:windows (:or "SDL_image.dll" "SDL_image1.2.dll"))
++    (:windows (:or "SDL_image.dll" "SDL_image1.2.dll" "libSDL_image-1-2-0"))
+     (:unix (:or "libSDL_image-1.2.so.0"
+             "libSDL_image1.2"
+             "libSDL_image.so")))
+@@ -23,11 +23,11 @@
+ (cffi:define-foreign-library zlib
+   (:windows (:or "zlib1.dll")))
+ (cffi:define-foreign-library libpng
+-  (:windows (:or "libpng15-15.dll" "libpng12-0.dll")))
++  (:windows (:or "libpng15-15.dll" "libpng12-0.dll" "libpng16-16")))
+ (cffi:define-foreign-library libjpg
+   (:windows (:or "libjpeg-8.dll" "jpeg.dll")))
+ (cffi:define-foreign-library libtiff
+-  (:windows (:or "libtiff-5.dll" "libtiff-3.dll")))
++  (:windows (:or "libtiff-5.dll" "libtiff-3.dll" "libtiff-6")))
+ 
+ (defun load-library ()
+   (cffi:use-foreign-library sdl-image)
+diff --git a/lispbuilder-sdl-mixer/cffi/library.lisp b/lispbuilder-sdl-mixer/cffi/library.lisp
+index 9e426a1..8de866f 100644
+--- a/lispbuilder-sdl-mixer/cffi/library.lisp
++++ b/lispbuilder-sdl-mixer/cffi/library.lisp
+@@ -15,7 +15,8 @@
+ (cffi:define-foreign-library sdl-mixer
+   (:darwin (:or (:framework "SDL_mixer")
+                 (:default "libSDL_mixer")))
+-  (:windows "SDL_mixer.dll")
++  (:windows (:or "SDL_mixer.dll"
++		 "libSDL_mixer-1-2-0"))
+   (:unix (:or "libSDL_mixer"
+ 	      "libSDL_mixer.so"
+ 	      "libSDL_mixer-1.2.so"
+-- 
+2.45.2
+
